@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 
 const Box = styled.div`
-  margin: 10px 5px;
+  margin: 3px 0px;
 `;
 
 
@@ -43,7 +43,7 @@ export default class NewBookmarkForm extends Component {
         </div>
         <div style={{display: this.state.visible === false ? "none" : "inline"}} >
           <form onSubmit={this.handleSubmit} style={{display: 'inline'}}>
-              <input placeholder='enter name...' autoComplete="off" size="13" value={this.state.title} name='title' onChange={this.handleChange} />
+              <input placeholder='enter name...' autoComplete="off" size="18" value={this.state.title} name='title' onChange={this.handleChange} />
               <input placeholder='enter url...' autoComplete="off" size="20" value={this.state.url} name='url' onChange={this.handleChange} />
               <input type='submit' value={String.fromCharCode(0x21B5)} />
           </form>

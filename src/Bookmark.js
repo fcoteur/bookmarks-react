@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components';
 
 const Box = styled.div`
-  margin: 10px 5px;
+  margin: 1px 0px;
 `;
 
 export default class Bookmark extends Component {
@@ -71,7 +71,7 @@ export default class Bookmark extends Component {
             value={this.state.title} 
             autoComplete="off" 
             name='title' 
-            size="13" 
+            size="15" 
             onChange={this.handleChange} 
           /> {' '}
           <input 

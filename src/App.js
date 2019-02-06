@@ -3,16 +3,18 @@ import styled from 'styled-components';
 import BookmarksList from './BookmarksList'
 
 const Box = styled.div`
-  margin: 10px 5px;
+  margin: 5px 5px;
+  padding: 5px 5px;
   width: 400px;
   text-align: left;
+  border: 1pt solid black;
 `;
 
 export default class App extends Component {
   render() {
     return (
       <Box>
-        <h2>Bookmarks</h2>
+        <span><strong>Bookmarks</strong></span>
         <BookmarksList />
       </Box>
     )
