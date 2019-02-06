@@ -5,7 +5,7 @@ import BookmarksList from './BookmarksList'
 const Box = styled.div`
   margin: 10px 5px;
   width: 400px;
-  text-align: center;
+  text-align: left;
 `;
 
 export default class App extends Component {

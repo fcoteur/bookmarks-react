@@ -44,7 +44,8 @@ export default class Bookmark extends Component {
     this.setState({[e.target.name]: e.target.value})
   }
   
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.edit(this.state)
     this.setState({
       id: '',
@@ -57,30 +58,32 @@ export default class Bookmark extends Component {
   render() {
     return (
       <Box>
+        <span style={{cursor: "pointer"}} onClick={this.handleClick}>{String.fromCharCode(0xD83D,0xDD8B)}</span>{' '}
         <span style={{cursor: "pointer"}} onClick={this.props.delete}>{String.fromCharCode(0xD83D,0xDDD1)}</span>{' '}
         
         <div style={{display: this.state.edit === true ? "none" : "inline"}}>
-          <span onClick={this.handleClick}>{this.props.bookmark.title}</span> {' - '}
-          <a href={this.props.bookmark.url}><span>{this.props.bookmark.url}</span></a>
+        <a href={this.props.bookmark.url}><span>{this.props.bookmark.title}</span></a>
         </div>
         
-        <div style={{display: this.state.edit === false ? "none" : "inline"}}>
+        <form style={{display: this.state.edit === false ? "none" : "inline"}} onSubmit={this.handleSubmit}>
           <input 
             id={this.props.bookmark.id}
             value={this.state.title} 
             autoComplete="off" 
             name='title' 
+            size="13" 
             onChange={this.handleChange} 
-            onBlur={this.handleSubmit}
           /> {' '}
           <input 
             id={this.props.bookmark.id}
             value={this.state.url} 
             autoComplete="off" 
             name='url'
+            size="20" 
             onChange={this.handleChange} 
           />
-        </div>
+          <input type='submit' value={String.fromCharCode(0x21B5)} />
+        </form>
       </Box>
     )
   }
